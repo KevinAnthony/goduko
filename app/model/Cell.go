@@ -1,6 +1,6 @@
 package model
-import "github.com/fatih/color"
 
+import "github.com/fatih/color"
 
 type Cell struct {
 	set    uint8
@@ -8,7 +8,7 @@ type Cell struct {
 	pencil [9]uint8
 }
 
-func (c Cell) GetValue() (interface{}) {
+func (c Cell) GetValue() interface{} {
 	if c.set != 0 {
 		return color.New(color.FgGreen).SprintFunc()(c.set)
 	}
@@ -17,11 +17,10 @@ func (c Cell) GetValue() (interface{}) {
 	}
 	return color.New(color.FgWhite).SprintfFunc()(" ")
 }
-func (c Cell) Init(value uint8){
+func (c Cell) Init(value uint8) {
 	c.set = value
 }
 
-func (c Cell) Write(value uint8){
+func (c Cell) Write(value uint8) {
 	c.pen = value
 }
-
